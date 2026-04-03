@@ -1,0 +1,40 @@
+import matplotlib.pyplot as plt
+
+def run_simulation():
+    print("--- Professional Solar PV & ROI Simulator ---")
+    
+    # 1. Inputs
+    system_size_kw = float(input("Enter System Size (kW): "))
+    total_cost = float(input("Total Installation Cost ($): "))
+    sun_hours = float(input("Average Daily Peak Sun Hours: "))
+    utility_rate = float(input("Utility Rate ($/kWh): "))
+    
+    # 2. Engineering Logic
+    # PR (Performance Ratio) accounts for dirt, wiring, and inverter losses
+    pr = 0.75 
+    annual_generation = system_size_kw * sun_hours * 365 * pr
+    annual_savings = annual_generation * utility_rate
+    payback_period = total_cost / annual_savings if annual_savings > 0 else 0
+
+    # 3. Output Data
+    print(f"\n--- Results ---")
+    print(f"Annual Energy Produced: {annual_generation:.2f} kWh")
+    print(f"Annual Financial Savings: ${annual_savings:.2f}")
+    print(f"Estimated Payback Period: {payback_period:.2f} years")
+
+    # 4. Visualization: Cumulative Savings over 25 Years
+    years = list(range(0, 26))
+    savings_over_time = [(annual_savings * y) - total_cost for y in years]
+
+    plt.figure(figsize=(10, 6))
+    plt.plot(years, savings_over_time, marker='o', color='green', label='Net Savings')
+    plt.axhline(0, color='black', linestyle='--') # Break-even line
+    plt.title('Solar Investment: 25-Year Financial Projection')
+    plt.xlabel('Years')
+    plt.ylabel('Net Profit/Loss ($)')
+    plt.grid(True, alpha=0.3)
+    plt.legend()
+    plt.show()
+
+if __name__ == "__main__":
+    run_simulation()
