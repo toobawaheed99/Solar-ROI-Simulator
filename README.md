@@ -6,7 +6,10 @@
 # E (Energy):Annual yield in kWh.
 # P (Capacity): Peak power of the installed array (kWp).
 # r (Yield Ratio): Panel efficiency rating.
-# PR (Performance Ratio): A critical engineering constant set to 0.75, accounting for:Inverter/Transformer efficiency.Ohmic losses in DC/AC cabling.Thermal derating and soiling (dust) factors.
+# PR (Performance Ratio): A critical engineering constant set to 0.75, accounting for:
+#    Inverter/Transformer efficiency
+#    Ohmic losses in DC/AC cabling
+#    Thermal derating and soiling (dust) factors.
 # .FeaturesDynamic ROI Analysis:
 # Calculates the "Break-Even" point based on local utility tariffs.
 # .Data Visualization: 
