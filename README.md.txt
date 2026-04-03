@@ -3,7 +3,7 @@
 A Python-based engineering tool designed to estimate the energy yield and financial viability of Grid-Tied Photovoltaic systems.
 
 ## Key Features
-* **Energy Yield Modeling:** Uses the standard formula $E = P \cdot r \cdot H \cdot PR$ to calculate annual production.
+* **Energy Yield Modeling:** Uses the standard formula E = P.r.H.PR to calculate annual production.
 * **Financial Analysis:** Calculates the Payback Period based on installation costs and local utility tariffs.
 * **Data Visualization:** Generates a 25-year cash-flow projection using Matplotlib.
 
